@@ -1,9 +1,7 @@
 package main
 
 import (
-	seat "./seat"
-	view "./view"
-	"fmt"
+	view "github.com/KeizoBookman/library/view"
 	"net/http"
 	"net/http/cgi"
 	"strings"
@@ -11,24 +9,49 @@ import (
 
 func main() {
 
-	cgi.Serve(http.HandlerFunc(handler))
+	err := cgi.Serve(http.HandlerFunc(handler))
 
-	req, err := cgi.Request()
 	if err != nil {
-		Error("request")
+		view.ViewFail("request")
 	}
 
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
 
-	handle := routing(r.URL.Path)
+	r.Header.Set("Content-Type:", "text/html; charset=UTF-8")
+	handle, err := routing(r.URL.Path)
+	if err != nil {
+		view.ViewFail(err.Error())
+	}
 	handle(w, r)
 }
 
-func routing(path string) func(w http.ResponseWriter, r *http.Request) {
+type failRouting string
 
-	if strings.HasPrefix(path, "/") {
-		return view.Index
+func (f failRouting) Error() string {
+	return string(f)
+}
+func routing(path string) (func(w http.ResponseWriter, r *http.Request), error) {
+	top := "index.cgi"
+	n := strings.Index(path, top)
+	if n == -1 {
+		return nil, failRouting("routing can not find root " + top)
+	}
+
+	size := n + len(top)
+
+	switch {
+	case strings.HasPrefix(path[size:], "/new"):
+		return view.NewSeat, nil
+	case strings.HasPrefix(path[size:], "/list"):
+		return view.List, nil
+	case strings.HasPrefix(path[size:], "/search"):
+		return view.Search, nil
+	case strings.HasPrefix(path[size:], "/"), strings.HasPrefix(path[size:], ""):
+		return view.Index, nil
+	default:
+		return http.NotFound, nil
+
 	}
 }

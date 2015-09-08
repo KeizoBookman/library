@@ -1,6 +1,10 @@
 package view
 
-func viewFail(value string) {
+import (
+	"fmt"
+)
+
+func ViewFail(value string) {
 	fmt.Print("Content-Type: text/plain\n\n")
-	fmt.Print("Error:" + value)
+	fmt.Println("Error " + value)
 }

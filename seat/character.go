@@ -10,7 +10,9 @@ type Character struct {
 	Level       int
 	Exp         int
 	Tribe       Tribe
-	Mask        int
+	Mask        string
+	Feature     string
+	Degrees     []Degree
 	Ability     Ability
 	Amendment   Amendment
 	Guard       Guard
@@ -53,8 +55,14 @@ type Colors struct {
 
 type Tribe struct {
 	Name      string
-	Type      string
+	Type      int
 	Privilege string
+}
+
+type Degree struct {
+	Name string
+	Main bool
+	Type string
 }
 
 type Ability struct {
@@ -80,11 +88,9 @@ type Damage struct {
 }
 
 type Equipment struct {
-	Hand1     Arm
-	Hand2     Arm
+	Hands     []Arm
 	Armor     Arm
-	Ornament  Arm
-	Ornament2 Arm
+	Ornaments []Arm
 }
 
 type Arm struct {
@@ -113,4 +119,8 @@ type Param struct {
 	Action      int
 	Hp          int
 	Guard       Guard
+}
+
+func (*Seat) Version() (string, error) {
+	return "0.0.1", nil
 }
