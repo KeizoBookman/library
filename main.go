@@ -42,6 +42,9 @@ func routing(path string) (func(w http.ResponseWriter, r *http.Request), error) 
 	size := n + len(top)
 
 	switch {
+
+	case strings.HasPrefix(path[size:], "/public"):
+		return nil, nil
 	case strings.HasPrefix(path[size:], "/new"):
 		return view.NewSeat, nil
 	case strings.HasPrefix(path[size:], "/list"):

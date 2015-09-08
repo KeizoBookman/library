@@ -12,7 +12,7 @@ import (
 
 func Index(w http.ResponseWriter, r *http.Request) {
 
-	tmpl, err := template.ParseFiles("template/index.tmpl")
+	tmpl, err := template.ParseFiles("./template/index.tmpl")
 	if err != nil {
 		ViewFail("index")
 		return
@@ -31,7 +31,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 
 func List(w http.ResponseWriter, r *http.Request) {
 	var data interface{}
-	tmpl, err := template.ParseFiles("template/list.tmpl")
+	tmpl, err := template.ParseFiles("./template/list.tmpl")
 	if err != nil {
 		ViewFail("list")
 		return
@@ -41,7 +41,7 @@ func List(w http.ResponseWriter, r *http.Request) {
 
 func Search(w http.ResponseWriter, r *http.Request) {
 	var data interface{}
-	tmpl, err := template.ParseFiles("template/search.tmpl")
+	tmpl, err := template.ParseFiles("./template/search.tmpl")
 	if err != nil {
 		ViewFail("search")
 		return
@@ -50,9 +50,9 @@ func Search(w http.ResponseWriter, r *http.Request) {
 }
 
 func NewSeat(w http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles("template/seat.tmpl")
+	tmpl, err := template.ParseFiles("./template/seat.tmpl")
 	if err != nil {
-		ViewFail("new:")
+		ViewFail("new:" + err.Error())
 		return
 	}
 	err = tmpl.Execute(w, nil)
@@ -119,7 +119,7 @@ func NewSeat(w http.ResponseWriter, r *http.Request) {
 
 	s := seat.Seat{}
 	s.Character = c
-	file, err := os.OpenFile("public/store", os.O_RDWR, 0666)
+	file, err := os.OpenFile("./public/store", os.O_RDWR, 0666)
 	if err != nil {
 		ViewFail("critical--- " + err.Error())
 		return

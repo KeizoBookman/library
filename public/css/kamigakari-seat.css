@@ -1,36 +1,136 @@
-#names {
+body {
+    background-color: whitesmoke;
 }
 
-#picture {
+#header {
+    background-color: gray;
+    height: 100px;
 }
 
-#kind {
+#icon {
+}
+.names {
+        position: absolute;
+        top: 100px;
+        left: 0px;
 }
 
-#experience {
+.picture {
+        position: absolute;
+        top: 100px;
+        left: 50px;
 }
 
-#symbol {
+.kind {
+        position: absolute;
+        top: 200px;
+        left: 0px;
+}
+
+.experience {
+        position: absolute;
+        top: 300px;
+        left: 300px;
+}
+
+.move {
+        position: absolute;
+        bottom: 150px;
+        left: 0px;
+}
+
+.symbol {
+        position: absolute;
+        top: 350px;
+        left: 0px;
+}
+
+.symbol input {
+        width: 70px;
 }
 
 
-#parsonal {
+.parsonal {
+        position: absolute;
+        top: 400px;
+        left: 300px;
 }
 
-#parson {
+.parsonal .parson {
+        position: absolute;
+        top: 100px;
 }
 
-#color {
+.parsonal .color {
+        position: absolute;
+        top: 230px;
 }
 
-#hero-parsonal {
+.parsonal input {
+        width: 80px;
 }
 
-#main-param {
+.degree{
+        position: absolute;
+        top: 500px;
+        left: 0px;
 }
 
-#sub-param {
+.degree input {
+        width: 20px;
 }
 
-#items {
+
+.hero-parsonal {
+        position: absolute;
+        top: 400px;
+        left: 580px;
+}
+
+.main-param {
+        position: absolute;
+        top: 600px;
+        left: 0px;
+}
+
+.main-param input {
+        width: 50px;
+}
+
+.sub-param {
+        position: absolute;
+        top: 600px;
+        left: 300px;
+}
+
+.sub-param input {
+        width: 50px;
+}
+
+
+.items {
+        position: absolute;
+        top: 700px;
+        left: 0px;
+}
+
+.tarrent {
+        position: absolute;
+        top: 120px;
+        left: 900px;
+}
+
+.tarrent input {
+    width: 30px
+}
+
+.footer {
+        position: absolute;
+        bottom: 0px;
+}
+
+#submit {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
 }

@@ -1,0 +1,2 @@
+AddHandler text/css .css
+AddHandler application/x-javascript .js
