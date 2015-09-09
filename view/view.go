@@ -20,7 +20,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	if n == -1 {
 		ViewFail("path")
 	}
-	data := struct{ Path string }{r.URL.Path[:n]}
+	data := ResourceIndex{r.URL.Path[:n]}
 	err = tmpl.Execute(w, data)
 	if err != nil {
 		ViewFail(err.Error())
