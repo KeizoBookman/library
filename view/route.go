@@ -6,7 +6,6 @@ import (
 	"html/template"
 	"net/http"
 	"os"
-	"strconv"
 	"strings"
 )
 
@@ -60,62 +59,14 @@ func NewSeat(w http.ResponseWriter, r *http.Request) {
 		ViewFail("new:")
 		return
 	}
-	r.ParseForm()
+	err = r.ParseForm()
+	if err != nil {
+	}
 
 	c := seat.Character{}
-	c.Name.Character = r.FormValue("character")
-	c.Name.Player = r.FormValue("player")
-	c.Parsonality.Detail = r.FormValue("detail")
-	c.Parsonality.Crest.Pos = r.FormValue("pos")
-	c.Parsonality.Crest.Figure = r.FormValue("figure")
-	c.Parsonality.Goal = r.FormValue("goals")
-	c.Parsonality.Feeling = r.FormValue("feeling")
-
-	age, err := strconv.Atoi(r.FormValue("age"))
-	c.Creation.Age = age
-	c.Creation.Sex = r.FormValue("sex")
-	height, _ := strconv.Atoi(r.FormValue("height"))
-	c.Creation.Height = height
-	weight, _ := strconv.Atoi(r.FormValue("weight"))
-	c.Creation.Weight = weight
-	c.Creation.Colors.Eye = r.FormValue("eye")
-	c.Creation.Colors.Hair = r.FormValue("hair")
-	c.Creation.Colors.Skin = r.FormValue("skin")
-	c.Creation.Colors.Other = r.FormValue("other")
-
-	lv, _ := strconv.Atoi(r.FormValue("lv"))
-	c.Level = lv
-	exp, _ := strconv.Atoi(r.FormValue("exp"))
-	c.Exp = exp
-
-	c.Tribe.Name = r.FormValue("tribe")
-	c.Tribe.Privilege = r.FormValue("privilege")
-	//c.Tribe.Type = r.FormValue("type")
-
-	c.Mask = r.FormValue("mask")
-	c.Feature = r.FormValue("feature")
-	//degree
-	agile, _ := strconv.Atoi(r.FormValue("agile"))
-	c.Ability.Agile = agile
-	intelligence, _ := strconv.Atoi(r.FormValue("Intelligence"))
-	c.Ability.Intelligence = intelligence
-	mind, _ := strconv.Atoi(r.FormValue("mind"))
-	c.Ability.Mind = mind
-	luck, _ := strconv.Atoi(r.FormValue("luck"))
-	c.Ability.Lucky = luck
-	pow, _ := strconv.Atoi(r.FormValue("power"))
-	c.Ability.Power = pow
-	/*
-		c.Amendment.Action
-		c.Amendment.Avoid
-		c.Amendment.Damage
-		c.Amendment.Guard
-		c.Amendment.Hit
-		c.Amendment.Hp
-		c.Amendment.Invok
-		c.Amendment.Penetration
-		c.Amendment.Resist
-	*/
+	err = c.GetFormValue(r)
+	if err != nil {
+	}
 
 	s := seat.Seat{}
 	s.Character = c
