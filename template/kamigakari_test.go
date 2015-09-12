@@ -7,18 +7,21 @@ import (
 	"testing"
 )
 
-func TestSeatCommon(t *testing.T) {
+func TestSeatKamigakari(t *testing.T) {
 
-	tmpl := template.Must(template.ParseFiles("seat.tmpl"))
-
-	file, err := os.OpenFile("testhtml/seat_test.html", os.O_CREATE|os.O_RDWR, 0666)
+	tmpl, err := template.ParseFiles("kamigakari.tmpl")
+	if err != nil {
+		t.Error("seat.tmpl can not parse. because," + err.Error())
+	}
+	file, err := os.OpenFile("testhtml/kamigakari_test.html", os.O_CREATE|os.O_RDWR, 0666)
 	defer file.Close()
 	if err != nil {
 		t.Error("testhtml/seat_test.html can not open:", err.Error())
 	}
 
 	seat := seat.Seat{
-		Testing: false,
+		Testing: true,
+		JSPath:  "../../public/js/jquery-1.11.3.min.js",
 	}
 	err = tmpl.Execute(file, seat)
 	if err != nil {

@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"github.com/KeizoBookman/library/seat"
 	"html/template"
+	"io/ioutil"
 	"net/http"
 	"os"
 	"strings"
@@ -20,7 +21,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	if n == -1 {
 		ViewFail("path")
 	}
-	data := ResourceIndex{r.URL.Path[:n]}
+	data := ResourceIndex{Path: r.URL.Path[:n]}
 	err = tmpl.Execute(w, data)
 	if err != nil {
 		ViewFail(err.Error())
@@ -49,7 +50,7 @@ func Search(w http.ResponseWriter, r *http.Request) {
 }
 
 func NewSeat(w http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles("./template/seat.tmpl")
+	tmpl, err := template.ParseFiles("./template/kamigakari.tmpl")
 	if err != nil {
 		ViewFail("new:" + err.Error())
 		return
@@ -73,10 +74,18 @@ func NewSeat(w http.ResponseWriter, r *http.Request) {
 
 	s := seat.Seat{}
 	s.Character = c
-	file, err := os.OpenFile("./public/store", os.O_RDWR, 0666)
+	file, err := os.OpenFile("./public/store", os.O_RDWR|os.O_APPEND, 0666)
 	if err != nil {
 		ViewFail("critical--- " + err.Error())
 		return
+	}
+
+	d, err := ioutil.ReadAll(file)
+	if err != nil {
+	}
+	var prev []seat.Seat
+	err = json.Unmarshal(d, &prev)
+	if err != nil {
 	}
 
 	bytes, err := json.Marshal(c)

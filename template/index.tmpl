@@ -3,7 +3,9 @@
     <head>
     <meta charset= "UTF-8">
     <title> TRPG キャラクターシート保管庫</title>
+    {{if true}}
     <link rel="stylesheet" type="text/css" href="../public/css/index.css">
+    {{end}}
     </head>
     <body>
 
@@ -13,6 +15,7 @@
     <div class="main">
     <a href="{{.Path}}index.cgi/new"> 新しいシート</a><br>
     <a href="{{.Path}}index.cgi/search"> 検索</a>
+    <a href="{{.Path}}index.cgi/list"> list</a>
     </div>
 
     <div id="footer">

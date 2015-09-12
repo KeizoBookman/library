@@ -1,7 +1,7 @@
 package view
 
 type ResourceIndex struct {
-	path string
+	Path string
 }
 
 type ResourceSearch struct {

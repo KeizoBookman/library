@@ -6,24 +6,28 @@ import (
 )
 
 type Seat struct {
+	// 神我狩キャラクターシート
+
 	Character Character
+	Testing   bool
+	JSPath    string
 }
 
 type Character struct {
 	Name        Name
-	Parsonality Parsonality
-	Creation    Creation
+	Parsonality Parsonality //
+	Creation    Creation    // 設定
 	Level       int
 	Exp         int
-	Tribe       Tribe
-	Mask        string
-	Feature     string
-	Degrees     []Degree
-	Ability     Ability
-	Amendment   Amendment
-	Guard       Guard
-	Equipment   Equipment
-	Tarrents    []Tarrent
+	Tribe       Tribe     // 種族情報
+	Mask        string    // 表の職業
+	Feature     string    // 特徴
+	Degrees     []Degree  // 称号
+	Ability     Ability   // 主能力値
+	Amendment   Amendment // 能力値修正
+	Guard       Guard     // 耐久値
+	Equipment   Equipment // 装備
+	Tarrents    []Tarrent // タレント
 }
 
 type Name struct {
@@ -33,7 +37,7 @@ type Name struct {
 
 type Parsonality struct {
 	Detail  string
-	Crest   Crest
+	Crest   Crest // 霊紋
 	Goal    string
 	Feeling string
 }
@@ -44,6 +48,7 @@ type Crest struct {
 }
 
 type Creation struct {
+	//　キャラクターの設定情報
 	Orgnization string
 	Age         int
 	Sex         string
@@ -60,18 +65,22 @@ type Colors struct {
 }
 
 type Tribe struct {
+	// 種族情報
 	Name      string
 	Type      int
 	Privilege string
 }
 
 type Degree struct {
+	// 称号
 	Name string
 	Main bool
 	Type string
+	// TypeはA or B
 }
 
 type Ability struct {
+	// 主能力値
 	Power        int
 	Agile        int
 	Intelligence int
@@ -80,6 +89,7 @@ type Ability struct {
 }
 
 type Amendment struct {
+	// 能力値修正
 	Param
 }
 
@@ -94,12 +104,15 @@ type Damage struct {
 }
 
 type Equipment struct {
-	Hands     []Arm
+	// 装備アイテムデータ
+	RightHand Arm
+	LeftHand  Arm
 	Armor     Arm
 	Ornaments []Arm
 }
 
 type Arm struct {
+	// 武器情報
 	Name string
 	Pos  string
 	Param
@@ -107,6 +120,7 @@ type Arm struct {
 }
 
 type Tarrent struct {
+	// タレント
 	Name     string
 	Timing   int
 	Distance string
@@ -116,15 +130,18 @@ type Tarrent struct {
 }
 
 type Param struct {
+	//主能力値
 	Hit         int
 	Avoid       int
 	Invok       int
 	Resist      int
 	Penetration int
-	Damage      Damage
-	Action      int
-	Hp          int
-	Guard       Guard
+
+	// 副能力値
+	Action int
+	Hp     int
+	Damage Damage
+	Guard  Guard
 }
 
 func (*Seat) Version() (string, error) {

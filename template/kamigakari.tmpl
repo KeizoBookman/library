@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset= "UTF-8">
+    <title> TRPG キャラクターシート保管庫</title>
+    {{if .Testing}}
+    <link rel="stylesheet" type="text/css" href="../../public/css/kamigakari-seat.css"> 
+    <script src={{.JSPath}}></script>
+    {{else}}
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    {{end}}
+    <!-- link rel="stylesheet" type="text/css" href="../public/css/kamigakari-seat.css" -->
+    </head>
+
+    <body>
+        <header>
+            <h1> 武装伝奇RPG　神我狩 </h1>
+            <div class="images"></div>
+        </header>
+
+        <form action="" method="POST">
+
+        <div class="main">
+            <div class="content">
+                <div class="leftcontent">
+                    <div class="flavor">
+                    <div class="leftflavor">
+                        <div class="topflavor">
+                            <div class="names">
+                                <table>
+                                    <tr>
+                                        <th>プレイヤー名</th>
+                                        <th>キャラクター名</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="character">
+                                        </td>
+                                        <td>
+                                            <input type="text" name="character">
+                                        </td>
+                                    </tr>
+                                </table>
+                            <div class="kind">
+                                <table>
+                                    <tr>
+                                        <td>種族</td>
+                                        <td><input type=""></td>
+                                        <td>種族特典</td>
+                                        <td><input type=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td>表の職業</td>
+                                        <td><input type="text"></td>
+                                        <td>特徴</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="buttomflavor">
+                            <div class="experience">
+                            <p>経験値</p>
+                            <input type="text" id="exp" value="0">
+                            </div>
+                            <div class="creation">
+                                <table>
+                                    <tr>
+                                        <td>組織</td>
+                                        <td><input type="text" name="orgnization"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>年齢</td>
+                                        <td><input type="text"></td>
+                                        <td>性別</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>身長</td>
+                                        <td><input type="text"></td>
+                                        <td>体重</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>瞳の色</td>
+                                        <td><input type="text"></td>
+                                        <td>髪の色</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>肌の色</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>その他</td>
+                                        <td>
+                                            <textarea id="" name="" cols="30" rows="10">
+                                            </textarea>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div> <!-- creation-->
+                            <div class="degrees">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightflavor">
+                        <div class="topflavor">
+                            <div class="Lv">
+                                <table>
+                                    <tr>
+                                        <td>Lv</td>
+                                        <td><input type="text" placeholder=""></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="spiritual">
+                                <p>霊紋</p>
+                                <table>
+                                    <tr>
+                                        <td>
+                                        <select id="" name="">
+                                        <option value=""> </option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                        <option value="">5</option>
+                                        <option value="">6</option>
+                                        </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <select id="" name="">
+                                        <option value=""> </option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                        <option value="">5</option>
+                                        <option value="">6</option>
+                                        </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <select id="" name="">
+                                        <option value=""> </option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                        <option value="">5</option>
+                                        <option value="">6</option>
+                                        </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <select id="" name="">
+                                        <option value=""> </option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                        <option value="">5</option>
+                                        <option value="">6</option>
+                                        </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="buttomflavor">
+                            <div class="parsonal">
+                                <table>
+                                    <tr>
+                                        <td>経緯</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>霊紋の形状</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>霊紋の場所</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>目的</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>その他</td>
+                                        <td><input type=""></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    </div> <!-- -->
+
+                    <div class="data">
+                        <div class="param">
+                            <div class="main-param">
+                            <table>
+                                <tr>
+                                    <th>体力</th>
+                                    <th>敏捷</th>
+                                    <th>知性</th>
+                                    <th>精神</th>
+                                    <th>幸運</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                            </div>
+                            <div class="sub-param">
+                            <table>
+                                <tr>
+                                    <th>物理D</th>
+                                    <th>魔力D</th>
+                                    <th>装甲</th>
+                                    <th>結界</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                            </div>
+                        </dv>
+                        <div class="battle-amemdment">
+                            <table>
+                            <tr><th>戦闘修正</th></tr>
+                                <tr>
+                                    <td>命中</td>
+                                    <td>回避</td>
+                                    <td>発動</td>
+                                    <td>抵抗</td>
+                                    <td>看破</td>
+                                    <td>物理D</td>
+                                    <td>魔力D</td>
+                                    <td>装甲</td>
+                                    <td>結界</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="items">
+                        </div>
+                        <div class="total-pram">
+                        </div>
+                        <div class="move">
+                            <table>
+                                <tr>
+                                    <th>簡易移動</th>
+                                    <th>戦闘移動</th>
+                                    <th>全力移動</th>
+                                </tr>
+                                <tr>
+                                    <td>1マス</td>
+                                    <td><input type="text">マス</td>
+                                    <td><input type="text">マス</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div> <!-- data -->
+                </div>
+            </div> 
+            <div class="rightcontent">
+                <div class="tarrents" id="tarrents"> 
+                <table id="tarrents-table">
+                    <tr>
+                        <th>名称</th>
+                        <th>タイミング</th>
+                        <th>距離</th>
+                        <th>対象</th>
+                        <th>コスト</th>
+                        <th>効果</th>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </div>
+        </div> <!-- main-->
+
+        </form>
+        <footer>
+        <p>
+            武装伝奇RPG 神我狩は力造氏、アークライト及び新紀元社の著作物です<br>
+
+            2015 Copyright by keizo
+        </p>
+        </footer>
+    </body>
+</html>

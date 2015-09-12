@@ -1,307 +1,336 @@
 <!DOCTYPE html>
 
 <html>
-        <head>
-                <meta charset= "UTF-8">
-                <title> TRPG キャラクターシート保管庫</title>
-
-                <link rel="stylesheet" type="text/css" href="../public/css/kamigakari-seat.css">
-        </head>
-
-
         <body>
 
 
-            <div id="header">
-            </div>
 
-            <form action="" method="POST">
 
-            <div class="names">
+                <div class="names">
 
-            <div id="icon">
-            </div>
-            <h3>名前</h3>
+                <h3>名前</h3>
 
-                <table>
-                    <tr>
-                        <td> キャラクター </td>
-                        <td> プレイヤー </td>
-                        <td> レベル </td>
-                    </tr>
-                    <tr>
-                        <td> <input type="text" name="character"  value=""/> <br> </td>
-                        <td> <input type="text" name="player"  value="" /> <br> </td>
-                        <td> <input type="text" name="Lv"  value="0" /> <br> </td>
-                    </tr>
-                </table>
-
-            </div> <!-- class name-->
-
-            <div class="picture">
-            </div>
-
-            <form action="" method="POST">
-
-            <div class="kind">
-                <h3>種族</h3>
-
-            <table>
-            <tr>
-                <td>
-                    種族 <input type="text" name="tribe" value="" /> 
-                </td>
-                <td>
-                    能力タイプ <select name="type"> 
-                    <option value="1">戦士 </option>
-                    <option value="2"> 汎用</option>
-                    <option value="3"> 魔法</option>  
-                </td>
-                <td> 
-                    種族特典 <input type="text" name="privilege" size="10" value="" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                表の職業 <input type="text" name="mask" />
-                </td>
-                <td>
-                特徴     <input type="text" name="feature" />
-                </td>
-            </tr>
-            </table>
-
-            </div>
-
-            <div class="experience">
-
-                <h3>経験値</h3>
-
-                経験値 <input type="text" name="exp" value="0" />
-            </div>
-
-            <div class="symbol">
-                称号 <input type="text" name="degree" />
-                タイプ <input type="text" name="type" />
-            </div>
-
-            <div class="degree">
-                <table>
-                {{if .Cahracter.Degrees eq nil}}
-                    <tr>
-                    <td>
-                    <input type="text" name="" value="" />
-                    <input type="text" name="" value="" />
-                    </td>
-                    </tr>
-                {{else}}
-                    {{ range $degree :=  .Character.Degrees}}
-                        <tr>
-                            <td>
-                            <input type="text" name="" value={{$degree.Name}} />
-                            </td>
-                            <td>
-                            <input type="text" name="" value={{$degree.Type}} />
-                            </td>
-                        </tr>
-                    {{end}}
-                {{end}}
-                </table>
-            </div>
-
-            <div class="parsonal">
-                <h3>パーソナリティ</h3>
-
-                <div class="person">
                     <table>
                         <tr>
-                            <td>
-                            組織 <input type="text" name="orgnization" />
-                            </td>
+                            <td> キャラクター </td>
+                            <td> プレイヤー </td>
+                            <td> レベル </td>
                         </tr>
                         <tr>
-                            <td>
-                            年齢 <input type="text" name="age" />
-                            </td>
-                            <td>
-                            性別 <input type="text" name="sex" />
-                            </td>
-                        </tr>
-                        <tr>
-
-                            <td>
-                            身長 <input type="text" name="height" />
-                            </td>
-                            <td>
-                            体重  <input type="text" name="weight" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
+                            <td> <input type="text" name="character"  value=""/> <br> </td>
+                            <td> <input type="text" name="player"  value="" /> <br> </td>
+                            <td> <input type="text" name="lv"  value="0" /> <br> </td>
                         </tr>
                     </table>
 
+                </div> <!-- class name-->
+
+                <div class="illust">
+                <img src="" alt="イラスト">
                 </div>
 
-                <div class="color">
+                <form action="" method="POST">
+
+                <div class="kind">
+                    <h3>種族</h3>
+
+                <table>
+                <tr>
+                    <td>
+                        種族 <input type="text" name="tribe" value="" /> 
+                    </td>
+                    <td>
+                        能力タイプ <select name="type"> 
+                        <option value="1">戦士 </option>
+                        <option value="2"> 汎用</option>
+                        <option value="3"> 魔法</option>  
+                    </td>
+                    <td> 
+                        種族特典 <input type="text" name="privilege" size="10" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    表の職業 <input type="text" name="mask" />
+                    </td>
+                    <td>
+                    特徴     <input type="text" name="feature" />
+                    </td>
+                </tr>
+                </table>
+
+                </div>
+
+                <div class="experience">
+
+                    <h3>経験値</h3>
+
+                    経験値 <input type="text" name="exp" value="0" />
+                </div>
+
+                <div class="symbol">
+                    称号 <input type="text" name="degree" />
+                    タイプ <input type="text" name="type" />
+                </div>
+
+                <div class="degree">
                     <table>
+                    {{if true}}
                         <tr>
-                            <td>
-                            瞳   <input type="text" name="eye" />
-                            </td>
-                            <td>
-                            肌  <input type="text" name="" />
-                            </td>
+                        <td>
+                        <input type="text" name="" value="" />
+                        <input type="text" name="" value="" />
+                        </td>
+                        </tr>
+                    {{else}}
+                        {{ range $degree :=  .Character.Degrees}}
+                            <tr>
+                                <td>
+                                <input type="text" name="" value={{$degree.Name}} />
+                                </td>
+                                <td>
+                                <input type="text" name="" value={{$degree.Type}} />
+                                </td>
+                            </tr>
+                        {{end}}
+                    {{end}}
+                    </table>
+                </div>
+
+                <div class="parsonal">
+                    <h3>パーソナリティ</h3>
+
+                    <div class="person">
+                        <table>
+                            <tr>
+                                <td>
+                                組織 <input type="text" name="orgnization" />
+                                </td>
                             </tr>
                             <tr>
+                                <td>
+                                年齢 <input type="text" name="age" />
+                                </td>
+                                <td>
+                                性別 <input type="text" name="sex" />
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                身長 <input type="text" name="height" />
+                                </td>
+                                <td>
+                                体重  <input type="text" name="weight" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <div class="color">
+                        <table>
+                            <tr>
+                                <td>
+                                瞳   <input type="text" name="eye" />
+                                </td>
+                                <td>
+                                肌  <input type="text" name="" />
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                髪  <input type="text" name="" />
+                                </td>
+                                <td>
+                                その他 <input type="text" name="" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="hero-parsonal">
+                    <h3>霊紋</h3>
+                    <table>
+                        <tr>
                             <td>
-                            髪  <input type="text" name="" />
+                            霊紋の位置 <input type="text" name="pos" />
                             </td>
+                        </tr>
+                        <tr>
                             <td>
-                            その他 <input type="text" name="" />
+                            霊紋の形状 <input type="text" name="figure" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            目的 <input type="text" name="goals" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            感情 <input type="text" name="feeling" />
                             </td>
                         </tr>
                     </table>
                 </div>
 
-            </div>
+                <div class="main-param">
+                    <h3>主能力値</h3>
 
-            <div class="hero-parsonal">
-                <h3>霊紋</h3>
-                <table>
-                    <tr>
-                        <td>
-                        霊紋の位置 <input type="text" name="pos" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        霊紋の形状 <input type="text" name="figure" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        目的 <input type="text" name="goals" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        感情 <input type="text" name="feeling" />
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="main-param">
-                <h3>主能力値</h3>
-
-                <table>
-                    <tr>
-                        <td>体力</td>
-                        <td>敏捷</td>
-                        <td>知性</td>
-                        <td>精神</td>
-                        <td>幸運</td>
-                    </tr>
-                    <tr>
-                        <td>
-                        <input type="text" name="power"  />
-                        </td>
-                        <td>
-                        <input type="text" name="agile" />
-                        </td>
-                        <td>
-                        <input type="text" name="intelligence" />
-                        </td>
-                        <td>
-                        <input type="text" name="mind" />
-                        </td>
-                        <td>
-                        <input type="text" name="luck" />
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="sub-param">
-                <h3>副能力値</h3>
-                <table>
-                    <tr>
-                        <td>物理D</td>
-                        <td>魔力D</td>
-                        <td>行動値</td>
-                        <td>生命力</td>
-                    </tr>
-                    <tr>
-                        <td>
-                        <input type="text" name="pyhs-damage" />
-                        </td>
-                        <td>
-                        <input type="text" name="magic-damage" />
-                        </td>
-                        <td>
-                        <input type="text" name="action" />
-                        </td>
-                        <td>
-                        <input type="text" name="life" />
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="items">
-                <h3>装備</h3>
-            </div>
-
-            <div class="move">
-                <h3>行動力</h3>
-            </div>
-
-            <div class="tarrent">
                     <table>
                         <tr>
-                            <td>名称</td>
-                            <td>タイミング</td>
-                            <td>距離</td>
-                            <td>対象</td>
-                            <td>コスト</td>
-                            <td>効果</td>
+                            <td>体力</td>
+                            <td>敏捷</td>
+                            <td>知性</td>
+                            <td>精神</td>
+                            <td>幸運</td>
                         </tr>
-
-                        {{if true}}
                         <tr>
-                                <td>
-                                        <input type="text" name="" value=""/>
-                                </td>
-                                <td>
-                                        <input type="text" name="" value=""/>
-                                </td>
-                                <td>
-                                        <input type="text" name="" value=""/>
-                                </td>
-                                <td>
-                                        <input type="text" name="" value=""/>
-                                </td>
-                                <td>
-                                        <input type="text" name="" value=""/>
-                                </td>
-                                <td>
-                                        <input type="textarea" name="" value=""/>
-                                </td>
+                            <td>
+                            <input type="text" name="power"  />
+                            </td>
+                            <td>
+                            <input type="text" name="agile" />
+                            </td>
+                            <td>
+                            <input type="text" name="intelligence" />
+                            </td>
+                            <td>
+                            <input type="text" name="mind" />
+                            </td>
+                            <td>
+                            <input type="text" name="luck" />
+                            </td>
                         </tr>
-                        {{else}}
-
-                        {{end}}
                     </table>
+                </div>
 
-            </div>
+                <div class="sub-param">
+                    <h3>副能力値</h3>
+                    <table>
+                        <tr>
+                            <td>物理D</td>
+                            <td>魔力D</td>
+                            <td>行動値</td>
+                            <td>生命力</td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <input type="text" name="pyhs-damage" />
+                            </td>
+                            <td>
+                            <input type="text" name="magic-damage" />
+                            </td>
+                            <td>
+                            <input type="text" name="action" />
+                            </td>
+                            <td>
+                            <input type="text" name="life" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
 
-            <div id="submit">
-                <input type="submit" />
-            </div>
+                <div class="items">
+                    <h3>装備</h3>
+
+                    {{if true}}
+                    <table>
+                        <tr>
+                        <div class="text">
+                            <td>命中</td>
+                            <td>回避</td>
+                            <td>抵抗</td>
+                            <td>発動</td>
+                            <td>看破</td>
+                            <td>物D</td>
+                            <td>魔D</td>
+                            <td>行動値</td>
+                            <td>生命力</td>
+                            <td>装甲</td>
+                            <td>結界</td>
+                        </tr>
+                        </div>
+                        <tr>
+                            <td>    <input type="text" name="avoid">         </td>
+                            <td>    <input type="text" name="hit">         </td>
+                            <td>    <input type="text" name="resist">         </td>
+                            <td>    <input type="text" name="invok">         </td>
+
+                            <td>    <input type="text" name="power">    </td>
+                            <td>    <input type="text" name="damage">         </td>
+                            <td>    <input type="text" name="action">   </td>
+                            <td>    <input type="text" name="guard">         </td>
+                            <td>    <input type="text" name="hp">         </td>
+                            <td>    <input type="text" name="penetration">         </td>
+                            <td>    <input type="text" name="strong">         </td>
+                            <td>    <input type="text" name="hart">         </td>
+                        </tr>
+                    </table>
+                    {{end}}
+                </div>
+
+                <div class="move">
+                    <h3>行動力</h3>
+                </div>
+
+                </div> <!-- left -->
+
+                <div id="right">
+                <div class="tarrent">
+                        <table>
+                            <tr>
+                                <td>名称</td>
+                                <td>タイミング</td>
+                                <td>距離</td>
+                                <td>対象</td>
+                                <td>コスト</td>
+                                <td>効果</td>
+                            </tr>
+
+                            {{if true}}
+                            <tr>
+                                    <td>
+                                            <input type="text" name="" value=""/>
+                                    </td>
+                                    <td>
+                                            <input type="text" name="" value=""/>
+                                    </td>
+                                    <td>
+                                            <input type="text" name="" value=""/>
+                                    </td>
+                                    <td>
+                                            <input type="text" name="" value=""/>
+                                    </td>
+                                    <td>
+                                            <input type="text" name="" value=""/>
+                                    </td>
+                                    <td>
+                                            <input type="textarea" name="" value=""/>
+                                    </td>
+                            </tr>
+                            {{else}}
+
+                            {{end}}
+                        </table>
+
+                </div>
+
+
+                <div id="submit">
+                    <input type="submit" />
+                </div>
+
+                </div> <!-- right-->
 
             </form>
 

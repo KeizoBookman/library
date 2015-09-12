@@ -1,0 +1,194 @@
+body {
+    background-color: whitesmoke;
+}
+
+#header {
+    display: block;
+    background-color: gray;
+    height: 100px;
+}
+
+#header h1 {
+    display: block;
+}
+
+#left {
+    position: absolute;
+    display: block;
+    top: 50px;
+    left: 0px;
+}
+
+
+#icon {
+    display: block;
+}
+
+.names {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+}
+
+.names input {
+    height: 20px;
+    font-size: 15px;
+}
+
+.illust {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+}
+
+.kind {
+    display: block;
+    position: absolute;
+    top: 200px;
+    left: 0px;
+}
+
+.experience {
+    display: block;
+    position: absolute;
+    top: 300px;
+    left: 300px;
+}
+
+.move {
+    display: block;
+    position: absolute;
+    bottom: 150px;
+    left: 0px;
+}
+
+.symbol {
+    display: block;
+    position: absolute;
+    top: 350px;
+    left: 0px;
+}
+
+.symbol input {
+    display: block;
+    width: 70px;
+}
+
+
+.parsonal {
+    display: block;
+    position: absolute;
+    top: 400px;
+    left: 300px;
+}
+
+.parsonal .parson {
+    position: absolute;
+    top: 100px;
+}
+
+.parsonal .color {
+    position: absolute;
+    top: 130px;
+}
+
+.parsonal input {
+    width: 80px;
+}
+
+.degree{
+    display: block;
+    position: absolute;
+    top: 500px;
+    left: 0px;
+}
+
+.degree input {
+    width: 20px;
+}
+
+
+.hero-parsonal {
+    display: block;
+    position: absolute;
+    top: 400px;
+    left: 580px;
+}
+
+.main-param {
+    display: block;
+    position: absolute;
+    top: 600px;
+    left: 0px;
+}
+
+.main-param input {
+    width: 50px;
+}
+
+.sub-param {
+    display: block;
+    position: absolute;
+    top: 600px;
+    left: 300px;
+}
+
+.sub-param h1 {
+    position: absolute;
+}
+.sub-param input {
+    width: 50px;
+}
+
+
+.items {
+    display: block;
+    position: absolute;
+    top: 700px;
+    left: 0px;
+}
+
+.items input {
+    width: 40px;
+}
+
+.move {
+    display: block;
+    position: absolute;
+    top: 800px;
+    left: 0px;
+}
+
+
+#right {
+    display: block;
+    position: absolute;
+    left: 200px;
+}
+
+.tarrent {
+    display: block;
+    position: absolute;
+    top: 120px;
+    left: 900px;
+}
+
+.tarrent input {
+    position: absolute;
+    width: 30px
+}
+
+.footer {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+}
+
+#submit {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 800px;
+}

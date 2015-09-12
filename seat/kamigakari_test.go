@@ -7,4 +7,10 @@ import (
 )
 
 func TestSeatKamigakari(t *testing.T) {
+	var s seat.Seat
+	var bytes []byte
+	err := json.Unmarshal(bytes, s)
+	if err != nil {
+		t.Error("")
+	}
 }

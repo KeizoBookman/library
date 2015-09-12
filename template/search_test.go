@@ -13,7 +13,12 @@ func TestSeatSearch(t *testing.T) {
 		t.Error("search.tmpl can not parse. because," + err.Error())
 	}
 
-	err = tmpl.Execute(os.Stderr, nil)
+	file, err := os.OpenFile("testhtml/search_test.html", os.O_CREATE|os.O_WRONLY, 0666)
+	defer file.Close()
+	if err != nil {
+		t.Error("testhtml/search_test.html", err.Error())
+	}
+	err = tmpl.Execute(file, nil)
 	if err != nil {
 		t.Error("search.tmpl can not execute, beause, " + err.Error())
 	}
